@@ -21,7 +21,7 @@ features = ["rt", "stm32l4x2"] # replace the model of your microcontroller here
 
 # this lets you use `cargo fix`!
 [[bin]]
-name = "l452-quickstart"
+name = "{{project-name}}"
 test = false
 bench = false
 
