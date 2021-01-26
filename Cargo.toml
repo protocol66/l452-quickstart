@@ -17,7 +17,7 @@ panic-halt = "0.2"
 
 [dependencies.stm32l4xx-hal]
 version = "0.6.0"
-features = ["rt", "stm32l4x2"] # replace the model of your microcontroller here
+features = ["rt", "stm32l4x2"] # replace the model of your microcontroller here (Already done)
 
 # this lets you use `cargo fix`!
 [[bin]]
