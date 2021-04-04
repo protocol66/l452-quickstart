@@ -11,13 +11,17 @@ embedded-hal = "0.2"
 nb = "0.1.2"
 cortex-m = "0.6"
 cortex-m-rt = "0.6"
-#stm32l4xx-hal = "0.6.0"
 # Panic behaviour, see https://crates.io/keywords/panic-impl for alternatives
 panic-halt = "0.2"
 
-[dependencies.stm32l4xx-hal]
-version = "0.6.0"
-features = ["rt", "stm32l4x2"] # replace the model of your microcontroller here (Already done)
+# Choose one of the hals below. Comment the other out.
+[dependencies.stm32-hal2]
+version = "0.2.2"
+features = ["l4x2", "l4rt"]
+
+# [dependencies.stm32l4xx-hal]
+# version = "0.6.0"
+# features = ["rt", "stm32l4x2"] # replace the model of your microcontroller here (Already done)
 
 # this lets you use `cargo fix`!
 [[bin]]
