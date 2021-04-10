@@ -1,21 +1,25 @@
-#![deny(unsafe_code)]
 #![no_main]
 #![no_std]
 
 // Halt on panic
-#[allow(unused_extern_crates)] // NOTE(allow) bug rust-lang/rust#53964
 extern crate panic_halt; // panic handler
 
 use cortex_m;
 use cortex_m_rt::entry;
-use stm32l4xx_hal as hal;
+use stm32_hal2 as hal;
 
-use crate::hal::{prelude::*, stm32};
+use crate::hal::{prelude::*,
+                 clocks::Clocks,
+                 pac,
+};
 
 #[entry]
 fn main() -> ! {
-    let p = stm32::Peripherals::take().unwrap();
-    let cp = cortex_m::peripheral::Peripherals::take().unwrap();
+    let p = pac::Peripherals::take().unwrap();
+    let cp = pac::CorePeripherals::take().unwrap();
+    
+    let clocks = Clocks::default();
+    clocks.setup(&mut p.RCC, &mut p.FLASH);
     
     loop{
 
