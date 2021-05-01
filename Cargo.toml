@@ -11,12 +11,13 @@ embedded-hal = "0.2"
 nb = "0.1.2"
 cortex-m = "0.6"
 cortex-m-rt = "0.6"
+cortex-m-semihosting = "0.3.7"
 # Panic behaviour, see https://crates.io/keywords/panic-impl for alternatives
 panic-halt = "0.2"
 
 # Choose one of the hals below. Comment the other out.
 [dependencies.stm32-hal2]
-version = "0.2.2"
+version = "0.2.4"
 features = ["l4x2", "l4rt"]
 
 # [dependencies.stm32l4xx-hal]
